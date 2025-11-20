@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Event Registration</title>
+  <style>
+    body{font-family:Arial;margin:20px}
+    .card{max-width:360px;padding:18px;border-radius:8px;border:1px solid #ddd}
+    label{display:block;margin:8px 0 4px}
+    input,select,button{width:100%;padding:8px;margin-bottom:10px;box-sizing:border-box}
+    #confirmation{font-weight:bold}
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="card">
+    <h2>Register for Event</h2>
+    <form id="regForm" onsubmit="return false;">
+      <label>First name</label><input id="first" required>
+      <label>Last name</label><input id="last" required>
+      <label>Email</label><input id="email" type="email" required>
+      <label>Contact</label><input id="mobile" maxlength="10" required>
+      <label>Gender</label>
+      <select id="gender" required>
+        <option value="">Select</option><option value="male">Male</option>
+        <option value="female">Female</option><option value="other">Other</option>
+      </select>
+      <label>Password</label><input id="password" type="password" required>
+      <label>Re-type Password</label><input id="repassword" type="password" required>
+      <button id="btn" type="button">Register</button>
+      <p id="confirmation"></p>
+    </form>
+  </div>
+</body>
+</html>

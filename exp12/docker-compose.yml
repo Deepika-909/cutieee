@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+
+  selenium:
+    image: selenium/standalone-chrome
+    shm_size: "2gb"
+    ports:
+      - "4444:4444"
+    depends_on:
+      - app
