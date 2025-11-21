@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app
+        image: yourusername/myapp:latest
+        ports:
+        - containerPort: 3000
+
+#go to docker hub and create a new repository named 'myapp'
+#docker build -t deepzz72206/myapp:latest .
+#docker push deepzz72206/myapp:latest
+# docker login
+# kubectl apply -f my-deployment.yaml
+# kubectl apply -f my-service.yaml
